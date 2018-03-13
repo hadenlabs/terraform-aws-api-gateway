@@ -23,10 +23,17 @@ Include this repository as a module in your existing terraform code:
 .. code-block:: hcl
 
     module "api-gateway" {
-    source              = "git::https://github.com/hadenlabs/terraform-aws-api-gateway.git?ref=tags/0.0.0"
-    name                = "${var.name}"
-    namespace           = "${var.namespace}"
-    stage               = "${var.stage}"
+        source      = "git::https://github.com/hadenlabs/terraform-aws-api-gateway.git?ref=tags/0.0.0"
+        name        = "${var.name}"
+        namespace   = "${var.namespace}"
+        stage       = "${var.stage}"
+        rest_api_id = "${var.rest_api_id}"
+        resource_id = "${var.resource_id}"
+        method      = "${var.method}"
+        path        = "${var.path}"
+        lambda      = "${var.lambda}"
+        region      = "${var.region}"
+        account_id  = "${var.account_id}"
     }
 
 
@@ -41,6 +48,20 @@ Variables
 | stage      | dev        | Stage (e.g. prod, dev, staging)                           | Yes      |
 +------------+------------+-----------------------------------------------------------+----------+
 | name       | name       | The Name of the application(e.g. `notification` or `call`)| Yes      |
++------------+------------+-----------------------------------------------------------+----------+
+| rest_api_id|            | The ID of the associated REST API                         | Yes      |
++------------+------------+-----------------------------------------------------------+----------+
+| resource_id|            | The API resource ID                                       | Yes      |
++------------+------------+-----------------------------------------------------------+----------+
+| method     |            | The HTTP method                                           | Yes      |
++------------+------------+-----------------------------------------------------------+----------+
+| path       |            | The API resource path                                     | Yes      |
++------------+------------+-----------------------------------------------------------+----------+
+| lambda     |            | The lambda name to invoke                                 | Yes      |
++------------+------------+-----------------------------------------------------------+----------+
+| region     |            | The AWS region, e.g., eu-west-1                           | Yes      |
++------------+------------+-----------------------------------------------------------+----------+
+| account_id |            | The AWS account ID                                        | Yes      |
 +------------+------------+-----------------------------------------------------------+----------+
 
 
