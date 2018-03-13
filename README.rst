@@ -22,8 +22,8 @@ Include this repository as a module in your existing terraform code:
 
 .. code-block:: hcl
 
-    module "lambda" {
-    source              = "git::https://github.com/hadenlabs/terraform-aws-api-gateway.git?ref=0.0.0"
+    module "api-gateway" {
+    source              = "git::https://github.com/hadenlabs/terraform-aws-api-gateway.git?ref=tags/0.0.0"
     name                = "${var.name}"
     namespace           = "${var.namespace}"
     stage               = "${var.stage}"
@@ -40,13 +40,7 @@ Variables
 +------------+------------+-----------------------------------------------------------+----------+
 | stage      | dev        | Stage (e.g. prod, dev, staging)                           | Yes      |
 +------------+------------+-----------------------------------------------------------+----------+
-| name       | lambda     | The Name of the application(e.g. `notification` or `call`)| Yes      |
-+------------+------------+-----------------------------------------------------------+----------+
-| runtime    | nodejs     | Runtime (e.g. nodejs,python2.7,python3.6)                 | Yes      |
-+------------+------------+-----------------------------------------------------------+----------+
-| handler    | handler    |                                                           | Yes      |
-+------------+------------+-----------------------------------------------------------+----------+
-| role       |            | IAM role name                                             | Yes      |
+| name       | name       | The Name of the application(e.g. `notification` or `call`)| Yes      |
 +------------+------------+-----------------------------------------------------------+----------+
 
 
