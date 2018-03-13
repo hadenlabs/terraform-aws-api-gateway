@@ -4,7 +4,9 @@ variable "name" {
 
 variable "namespace" {}
 
-variable "stage" {}
+variable "stage" {
+  default = "dev"
+}
 
 variable "_delimiter" {
   type    = "string"
