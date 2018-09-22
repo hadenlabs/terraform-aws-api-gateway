@@ -40,25 +40,25 @@ windows:
   - editor:
       layout: even-horizontal
       panes:
-        - editor:
-        - pwd:
-        - pwd:
+        - editor
+        - pwd
+        - pwd
   - python:
       layout: main-vertical
       panes:
-        - ipython:
+        - ipython
   - databases:
       layout: main-vertical
       panes:
-        - postgresql:
-        - ls:
+        - postgresql
+        - ls
   - aws:
       layout: main-vertical
       panes:
-        - webserver:
-        - databases:
+        - webserver
+        - databases
   - docker:
       layout: main-vertical
       panes:
-        - webserver:
-        - databases:
+        - webserver
+        - databases
