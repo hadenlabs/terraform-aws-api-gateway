@@ -20,7 +20,7 @@ The module works in two distinct modes:
 
 Include this repository as a module in your existing terraform code:
 
-.. code-block:: hcl
+.. code-block::
 
     module "api-gateway" {
         source      = "git::https://github.com/hadenlabs/terraform-aws-api-gateway.git?ref=tags/0.1.0"
