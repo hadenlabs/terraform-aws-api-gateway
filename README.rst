@@ -1,6 +1,6 @@
 |license|
 
-:Version: 0.1.0
+:Version: 0.1.1
 :Web: https://github.com/hadenlabs/terraform-aws-api-gateway
 :Download: https://github.com/hadenlabs/terraform-aws-api-gateway
 :Source: https://github.com/hadenlabs/terraform-aws-api-gateway
@@ -20,10 +20,10 @@ The module works in two distinct modes:
 
 Include this repository as a module in your existing terraform code:
 
-.. code-block:: hcl
+.. code-block::
 
     module "api-gateway" {
-        source      = "git::https://github.com/hadenlabs/terraform-aws-api-gateway.git?ref=tags/0.1.0"
+        source      = "git::https://github.com/hadenlabs/terraform-aws-api-gateway.git?ref=tags/0.1.1"
         name        = "${var.name}"
         namespace   = "${var.namespace}"
         stage       = "${var.stage}"
