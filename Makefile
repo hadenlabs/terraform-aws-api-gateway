@@ -7,9 +7,6 @@ OS := $(shell uname)
 .DEFAULT_GOAL := help
 
 PROJECT := terraform-aws-api-gateway
-PROJECT_DEV := $(PROJECT)_dev
-PROJECT_STAGE := $(PROJECT)_stage
-PROJECT_TEST := $(PROJECT)_test
 
 PYTHON_VERSION=3.6.4
 PYENV_NAME="${PROJECT}"
@@ -33,7 +30,6 @@ help:
 	@echo ''
 	@echo 'Usage:'
 	@echo '    environment               create environment with pyenv'
-	@echo '    install                   install dependences python by env'
 	@echo '    clean                     remove files of build'
 	@echo '    setup                     install requirements'
 	@echo ''
@@ -56,7 +52,7 @@ endif
 setup: clean
 	$(pip_install) "${REQUIREMENTS_DIR}/setup.txt"
 	pre-commit install
-	cp -rf extras/git/hooks/prepare-commit-msg .git/hooks/
+	cp -rf .hooks/prepare-commit-msg .git/hooks/
 	@if [ ! -e ".env" ]; then \
 		cp -rf .env-sample .env;\
 	fi
@@ -68,11 +64,3 @@ environment: clean
 	fi
 	pyenv virtualenv "${PYTHON_VERSION}" "${PYENV_NAME}" >> /dev/null 2>&1 || echo $(MESSAGE_HAPPY)
 	pyenv activate "${PYENV_NAME}" >> /dev/null 2>&1 || echo $(MESSAGE_HAPPY)
-
-install: clean
-	@echo $(MESSAGE) "Deployment environment: ${env}"
-	@if [ "${env}" == "" ]; then \
-		$(pip_install) requirements.txt; \
-	else \
-		$(pip_install) "${REQUIREMENTS_DIR}/${env}.txt"; \
-	fi
